@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useToast } from "../context/ToastContext";
+import { API_BASE_URL } from "../config";
 
 function BudgetModal({ onSave }) {
   const [category, setCategory] = useState("Food");

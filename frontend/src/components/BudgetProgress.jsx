@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useContext } from "react";
 import { useToast } from "../context/ToastContext";
 import { AuthContext } from "../context/AuthContext";
+import { API_BASE_URL } from "../config";
 
 function BudgetProgress({
   category,

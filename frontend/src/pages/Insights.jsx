@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import ForecastCard from "../components/ForecastCard";
-
+import { API_BASE_URL } from "../config";
 
 function Insights({ expenses }) {
   const [aiData, setAiData] = useState(null);

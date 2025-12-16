@@ -1,5 +1,6 @@
 import { useEffect, useState, useCallback } from "react";
 import BudgetProgress from "./BudgetProgress";
+import { API_BASE_URL } from "../config";
 
 function BudgetList({ expenses = [], user }) {
   const [budgets, setBudgets] = useState([]);
