@@ -7,24 +7,40 @@ const expenseRoutes = require("./routes/expenseRoutes");
 const authRoutes = require("./routes/authRoutes");
 const aiRoutes = require("./routes/aiRoutes");
 const reportRoutes = require("./routes/reportRoutes");
+const budgetRoutes = require("./routes/budgetRoutes");
 
 const app = express();
 
-app.use(cors());
+/* Middleware */
+app.use(cors({
+ origin: [
+    "http://localhost:3000",
+    "https://ai-finance-tracker.vercel.app"
+  ],  // later replace with Vercel URL
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
 app.use(express.json());
 
+/* MongoDB */
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB connected"))
-  .catch(err => console.log(err));
+  .catch(err => console.error("MongoDB error:", err));
 
+/* Routes */
 app.use("/api/expense", expenseRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/ai", aiRoutes);
-app.use("/api/budget", require("./routes/budgetRoutes"));
-app.use("/api/report", require("./routes/reportRoutes"));
+app.use("/api/budget", budgetRoutes);
+app.use("/api/report", reportRoutes);
 
+/* Health check (IMPORTANT for Render) */
+app.get("/", (req, res) => {
+  res.send("AI Finance Tracker Backend is running 🚀");
+});
 
-
-app.listen(process.env.PORT, () => {
-  console.log(`Server running on port ${process.env.PORT}`);
+/* Start server */
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
