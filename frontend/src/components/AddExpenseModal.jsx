@@ -16,7 +16,7 @@ function AddExpenseModal({ onSave }) {
     }
 
     try {
-      const res = await fetch(`${API_BASE_URL}/api/expense/all`, {
+      const res = await fetch(`${API_BASE_URL}/api/expense/add`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
