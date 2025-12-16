@@ -6,6 +6,11 @@ from collections import defaultdict
 
 app = FastAPI()
 
+
+@app.get("/")
+def root():
+    return {"status": "AI service running 🚀"}
+
 # ---------- MODELS ----------
 
 class Expense(BaseModel):
