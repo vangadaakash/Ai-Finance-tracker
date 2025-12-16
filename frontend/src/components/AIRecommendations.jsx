@@ -15,11 +15,14 @@ function AIRecommendations({ expenses, onApplyBudget }) {
   useEffect(() => {
     if (!expenses || expenses.length === 0) return;
 
-    fetch(`${API_BASE_URL}/api/ai/insights`, {
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`
-      }
-    })
+   fetch(`${API_BASE_URL}/api/ai/insights`, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    Authorization: `Bearer ${localStorage.getItem("token")}`
+  }
+})
+
       .then(res => res.json())
       .then(data => setAiData(data))
       .catch(() => setAiData(null));
