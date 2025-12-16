@@ -43,7 +43,7 @@ function BudgetProgress({
     if (!newLimit || newLimit <= 0) return;
 
     try {
-      const res = await fetch("http://localhost:5000/api/budget/set", {
+      const res = await fetch(`${API_BASE_URL}/api/budget/set`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -74,7 +74,7 @@ function BudgetProgress({
     if (!window.confirm(`Delete budget for ${category}?`)) return;
 
     try {
-      const res = await fetch(`http://localhost:5000/api/budget/${budgetId}`, {
+      const res = await fetch(`${API_BASE_URL}/api/budget/${budgetId}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`

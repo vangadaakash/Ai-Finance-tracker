@@ -15,7 +15,7 @@ function BudgetList({ expenses = [], user }) {
       return;
     }
 
-    fetch("http://localhost:5000/api/budget/all", {
+    fetch(`${API_BASE_URL}/api/budget/all`, {
       headers: {
         Authorization: `Bearer ${token}`
       }

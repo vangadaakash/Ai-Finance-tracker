@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { useToast } from "../context/ToastContext";
 import "./AIRecommendations.css";
-
+import { API_BASE_URL } from "../config";
 function AIRecommendations({ expenses, onApplyBudget }) {
   const [aiData, setAiData] = useState(null);
   const [index, setIndex] = useState(0);
@@ -15,7 +15,7 @@ function AIRecommendations({ expenses, onApplyBudget }) {
   useEffect(() => {
     if (!expenses || expenses.length === 0) return;
 
-    fetch("http://localhost:5000/api/ai/insights", {
+    fetch(`${API_BASE_URL}/api/ai/insights`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`
       }
@@ -49,7 +49,8 @@ function AIRecommendations({ expenses, onApplyBudget }) {
   /* ================= APPLY AI BUDGET ================= */
   const applyAIBudget = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/budget/set", {
+      const res = await fetch(`${API_BASE_URL}/api/budget`
+, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

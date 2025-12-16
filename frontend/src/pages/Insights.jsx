@@ -67,7 +67,7 @@ useEffect(() => {
 
     setLoading(true);
 
-    fetch("http://localhost:5000/api/ai/insights", {
+    fetch(`${API_BASE_URL}/api/ai/insights`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`
       }

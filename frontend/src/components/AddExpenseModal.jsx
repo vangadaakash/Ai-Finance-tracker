@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useToast } from "../context/ToastContext";
-
+import { API_BASE_URL } from "../config";
 function AddExpenseModal({ onSave }) {
   const [open, setOpen] = useState(false);
   const [amount, setAmount] = useState("");
@@ -16,7 +16,7 @@ function AddExpenseModal({ onSave }) {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/expense/add", {
+      const res = await fetch(`${API_BASE_URL}/api/expense/all`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

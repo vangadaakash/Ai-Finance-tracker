@@ -61,7 +61,7 @@ function Dashboard() {
 
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:5000/api/expense/all", {
+      const res = await fetch(`${API_BASE_URL}/api/expense/all`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`
         }
@@ -97,7 +97,7 @@ function Dashboard() {
 
     let isMounted = true;
 
-    fetch("http://localhost:5000/api/ai/insights", {
+    fetch(`${API_BASE_URL}/api/ai/insights`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`
       }
@@ -119,7 +119,7 @@ function Dashboard() {
   const exportPDF = async () => {
     try {
       const res = await fetch(
-        `http://localhost:5000/api/report/export?month=${selectedMonth}`,
+        `${API_BASE_URL}/api/report/export?month=${selectedMonth}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`
