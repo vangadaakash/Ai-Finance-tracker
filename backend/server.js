@@ -15,9 +15,10 @@ const app = express();
 app.use(cors({
  origin: [
     "http://localhost:3000",
-    "https://ai-finance-tracker.vercel.app"
+    "https://ai-finance-tracker-hazel.vercel.app"
   ],  // later replace with Vercel URL
   methods: ["GET", "POST", "PUT", "DELETE"],
+   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true
 }));
 app.use(express.json());
