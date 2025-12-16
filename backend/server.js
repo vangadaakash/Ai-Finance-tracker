@@ -13,14 +13,15 @@ const app = express();
 
 /* Middleware */
 app.use(cors({
- origin: [
+  origin: [
     "http://localhost:3000",
     "https://ai-finance-tracker-hazel.vercel.app"
-  ],  // later replace with Vercel URL
-  methods: ["GET", "POST", "PUT", "DELETE"],
-   allowedHeaders: ["Content-Type", "Authorization"],
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true
 }));
+
 app.use(express.json());
 
 /* MongoDB */
