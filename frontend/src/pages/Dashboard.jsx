@@ -19,6 +19,7 @@ import BudgetModal from "../components/BudgetModal";
 import AIRecommendations from "../components/AIRecommendations";
 import ForecastCard from "../components/ForecastCard";
 import "./Dashboard.css";
+import { API_BASE_URL } from "../config";
 
 function Dashboard() {
   const { user } = useContext(AuthContext);
