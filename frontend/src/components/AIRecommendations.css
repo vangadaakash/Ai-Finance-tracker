@@ -1,0 +1,96 @@
+.ai-reco-wrapper {
+  margin-top: 40px;
+  background: white;
+  border-radius: 22px;
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.ai-reco-heading {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 20px;
+}
+
+.ai-reco-card {
+  background: #f8fafc;
+  border-radius: 18px;
+  padding: 24px;
+  border-left: 6px solid #8b5cf6;
+  min-height: 170px;
+  text-align: center;
+  transition: all 0.4s ease;
+}
+
+.ai-icon {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.ai-reco-content {
+  margin-top: 10px;
+  font-size: 15px;
+  color: #374151;
+}
+
+.ai-reco-content h2 {
+  margin: 8px 0;
+  color: #2563eb;
+}
+
+.highlight {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+.score-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #8b5cf6, #6366f1);
+  color: white;
+  font-size: 26px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px auto;
+}
+
+.ai-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+  gap: 10px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #cbd5e1;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #2563eb;
+}
+.apply-btn {
+  margin-top: 12px;
+  padding: 8px 16px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.apply-btn:hover {
+  opacity: 0.9;
+}
+.ai-reco-card.danger {
+  border-left-color: #dc2626;
+  background: #fef2f2;
+}

@@ -1,0 +1,18 @@
+.forecast-card {
+  background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+  border-radius: 16px;
+  padding: 20px;
+  margin-top: 24px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.forecast-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.forecast-amount {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #4338ca;
+}
