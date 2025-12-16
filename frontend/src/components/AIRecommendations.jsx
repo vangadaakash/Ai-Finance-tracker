@@ -14,18 +14,19 @@ function AIRecommendations({ expenses, onApplyBudget }) {
   /* ================= FETCH AI DATA ================= */
   useEffect(() => {
     if (!expenses || expenses.length === 0) return;
-
-   fetch(`${API_BASE_URL}/api/ai/insights`, {
+fetch(`${API_BASE_URL}/api/ai/insights`, {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
     Authorization: `Bearer ${localStorage.getItem("token")}`
-  }
+  },
+  body: JSON.stringify({
+    expenses
+  })
 })
-
-      .then(res => res.json())
-      .then(data => setAiData(data))
-      .catch(() => setAiData(null));
+  .then(res => res.json())
+  .then(data => setAiData(data))
+  .catch(() => setAiData(null));
   }, [expenses]);
 
   /* ================= ANOMALY POPUP ================= */
@@ -38,7 +39,8 @@ function AIRecommendations({ expenses, onApplyBudget }) {
 
   /* ================= AUTO SLIDE ================= */
   useEffect(() => {
-    if (!aiData) return;
+    if (!aiData || !aiData.autoBudget) return null;
+
 
     autoSlideRef.current = setInterval(() => {
       setIndex(i => (i + 1) % slides.length);
