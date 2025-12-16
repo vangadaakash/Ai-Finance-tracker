@@ -25,7 +25,7 @@ exports.getInsights = async (req, res) => {
     };
 
     const aiRes = await axios.post(
-      "http://127.0.0.1:8000/insights",
+      "https://ai-finance-tracker-1-f0jw.onrender.com/insights",
       payload
     );
 
