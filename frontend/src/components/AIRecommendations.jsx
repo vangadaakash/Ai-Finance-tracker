@@ -55,8 +55,7 @@ fetch(`${API_BASE_URL}/api/ai/insights`, {
   /* ================= APPLY AI BUDGET ================= */
   const applyAIBudget = async () => {
     try {
-      const res = await fetch(`${API_BASE_URL}/api/budget`
-, {
+      const res = await fetch(`${API_BASE_URL}/api/budget/set`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
