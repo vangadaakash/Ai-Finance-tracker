@@ -98,7 +98,7 @@ function Dashboard() {
 
     let isMounted = true;
 
-    fetch(`${AI_BASE_URL}/insights`, {
+    fetch(`${API_BASE_URL}/api/ai/insights`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
