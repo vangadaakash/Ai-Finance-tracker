@@ -1,6 +1,6 @@
 export const API_BASE_URL =
   process.env.REACT_APP_API_URL ||
-  "http://localhost:5000";
+  "https://ai-finance-tracker-pbag.onrender.com";
 export const AI_BASE_URL =
   process.env.REACT_APP_AI_URL ||
-  "http://localhost:8000";
+  "https://ai-finance-tracker-1-f0jw.onrender.com";
