@@ -68,9 +68,14 @@ useEffect(() => {
     setLoading(true);
 
     fetch(`${API_BASE_URL}/api/ai/insights`, {
+      method: "POST",
       headers: {
+        "Content-Type": "application/json",
         Authorization: `Bearer ${localStorage.getItem("token")}`
-      }
+      },
+      body: JSON.stringify({
+        expenses
+      })
     })
       .then(res => res.json())
       .then(data => {
