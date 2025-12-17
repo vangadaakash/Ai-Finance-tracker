@@ -7,7 +7,7 @@ const router = express.Router();
 router.post("/insights", auth, async (req, res) => {
   try {
     const response = await axios.post(
-      "https://ai-finance-tracker-1-f0jw.onrender.com/insights",
+      "https://ai-finance-tracker-1-f0jw.onrender.com",
       req.body
     );
 
