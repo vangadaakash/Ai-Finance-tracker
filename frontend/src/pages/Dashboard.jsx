@@ -98,10 +98,15 @@ function Dashboard() {
 
     let isMounted = true;
 
-    fetch(`${AI_BASE_URL}/api/ai/insights`, {
+    fetch(`${AI_BASE_URL}/insights`, {
+      method: "POST",
       headers: {
+        "Content-Type": "application/json",
         Authorization: `Bearer ${localStorage.getItem("token")}`
-      }
+      },
+      body: JSON.stringify({
+        expenses: filteredExpenses
+      })
     })
       .then(res => res.json())
       .then(data => {
