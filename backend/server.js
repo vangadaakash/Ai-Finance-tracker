@@ -15,7 +15,8 @@ const app = express();
 app.use(cors({
   origin: [
     "http://localhost:3000",
-    "https://ai-finance-tracker-hazel.vercel.app"
+    "https://ai-finance-tracker-hazel.vercel.app",
+    "https://ai-finance-tracker-hgwb3prr0-vangada-aakashs-projects.vercel.app/"
   ],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
