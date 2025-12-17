@@ -39,7 +39,7 @@ fetch(`${API_BASE_URL}/api/ai/insights`, {
 
   /* ================= AUTO SLIDE ================= */
   useEffect(() => {
-    if (!aiData || !aiData.autoBudget) return null;
+    if (!aiData || !aiData.autoBudget) return;
 
 
     autoSlideRef.current = setInterval(() => {
@@ -49,7 +49,8 @@ fetch(`${API_BASE_URL}/api/ai/insights`, {
     return () => clearInterval(autoSlideRef.current);
   }, [aiData]);
 
-  if (!aiData) return null;
+  if (!aiData || !aiData.autoBudget) return null;
+
 
   /* ================= APPLY AI BUDGET ================= */
   const applyAIBudget = async () => {
